@@ -16,7 +16,6 @@ let wratio = canvas.width / imgWidth;
 let ratio = Math.max(hratio, wratio);
 let centerY = Math.floor(canvas.height - imgHeight * ratio) / 2;
 let centerX = Math.floor(canvas.width - imgWidth * ratio) / 2;
-console.log(centerX);
 
 window.addEventListener("load", () => {
   ctx.drawImage(
@@ -30,6 +29,8 @@ window.addEventListener("load", () => {
     images[1].width * ratio,
     images[1].height * ratio
   );
+animate();
+
 });
 
 let frame = 1;
@@ -37,10 +38,9 @@ let i = 1;
 
 function animate() {
   frame++;
-  if (frame % 10 == 0) {
-    if (i <= 300) {
+  if (frame % 5 == 0) {
+    if (i < 300) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
       ctx.drawImage(
         images[i],
         0,
@@ -54,7 +54,10 @@ function animate() {
       );
       i++;
     }
+    else{
+        // console.log(i);
+        i=1
+    }
   }
   requestAnimationFrame(animate);
 }
-animate();

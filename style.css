@@ -7,8 +7,16 @@ body {
   background: #000;
   height: 100vh;
   position: relative;
-  overflow: hidden;
 }
 canvas {
     border: black 4px solid;
+}
+.page{
+  height: 100dvh;
+}
+#page1{
+  background:#190482;
+}
+#page2{
+  background:#ffdd83;
 }
